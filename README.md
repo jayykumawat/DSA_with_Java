@@ -49,9 +49,9 @@ To maintain industry-level code quality, every file in this repository follows:
 ---
 
 ## 🚀 How to Use
-1. Clone the repo: `git clone https://github.com/YOUR_USERNAME/Java-with-DSA.git`
+1. Clone the repo: `git clone https://github.com/jayykumawat/Java-with-DSA.git`
 2. Navigate to a specific topic: `cd src/dsa/arrays`
 3. Compile and Run: `javac FileName.java && java FileName`
 
 ---
-*Created and maintained by [Your Name]. Feel free to reach out for collaborations!*
+*Created and maintained by [jay kumawat]. Feel free to reach out for collaborations!*
