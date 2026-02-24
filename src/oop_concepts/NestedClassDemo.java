@@ -22,7 +22,7 @@ class OuterClass {
     class InnerClass {
         void display() {
             System.out.println("Inside Inner Class");
-            System.out.println("Accessing outer variable: " + message);
+            System.out.println("Accessing outer class variable: " + message);
         }
     }
 }
@@ -36,13 +36,13 @@ public class NestedClassDemo {
     }
     public static void main(String[] args) {
 
-        // Using Static Nested Class
+        // Calling Static Nested Class
         StaticNested staticObj = new StaticNested();
         staticObj.show();
 
-        System.out.println("-----");
+        System.out.println();
 
-        // Using Inner Class
+        // Calling Inner Class
         OuterClass outer = new OuterClass();
         OuterClass.InnerClass innerObj = outer.new InnerClass();
         innerObj.display();
