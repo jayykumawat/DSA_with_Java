@@ -6,12 +6,13 @@ public class DifferentPackageTest {
 
     public static void main(String[] args) {
 
-        ParentClass obj = new ParentClass();
+        ParentClass parent = new ParentClass();
 
-        // System.out.println(obj.defaultVar); not access in this package
-        // System.out.println(obj.protectedVar); not access in this package
-        // System.out.println(obj.privateVar); not access in this package
+        // Even though protected, this won't work:
+        // System.out.println(parent.protectedVar);
 
-        System.out.println("public: " + obj.publicVar);
+        ChildClass child = new ChildClass();
+        child.testaccess();
+
     }
 }
