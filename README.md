@@ -1,30 +1,36 @@
 # ☕ Java & Data Structures Mastery
 
-Welcome to my central repository for Java development and Data Structures & Algorithms (DSA). This repository serves as a technical log of my journey from a BCA student to a Professional Backend Developer.
+A structured repository documenting my journey in Java development and Data Structures & Algorithms (DSA).
+
+This project evolves from foundational Java concepts to professional-level object-oriented design and problem-solving patterns.
 
 ---
 
 ## 🏗️ Repository Structure
 
-I follow a strict professional directory structure to ensure code maintainability:
+This repository is organized to reflect conceptual progression:
 
-* `src/basic_syntax/`: Fundamental Java concepts (Control flow, Data types).
-* `src/oop_concepts/`: Demonstrations of Abstraction, Encapsulation, Inheritance, and Polymorphism.
-* `src/collections/`: Implementation and usage of the Java Collections Framework (List, Set, Map).
-* `src/dsa/`: Problem-solving categorized by data structure (Arrays, Strings, LL, etc.).
-* `tests/`: Unit tests for logic verification (using JUnit).
+- `src/basic_syntax/` → Core Java fundamentals
+- `src/oop_concepts/` → Beginner-level OOP demonstrations
+- `src/oops_Levelup/` → Professional OOP architecture (multi-file structured design)
+- `src/collections/` → Java Collections Framework (Core + Advanced)
+- `src/exception_handling/` → Exception flow, custom exceptions, and error handling
+- `src/dsa/` → Data structure based problem solving
+- `tests/` → Unit tests for validation
+
 
 ---
 
 ## 📈 Learning Progress
 
-| Topic | Status | Key Concept Learned |
+| Topic | Status | Focus Area |
 | :--- | :--- | :--- |
-| **Basic Java** | ✅ Completed | JVM Architecture, Bytecode, Memory Management |
-| **OOPs** | 🔄 In-Progress | Interface vs Abstract Classes, Solid Principles |
-| **Arrays & Strings** | 🔄 In-Progress | Two-pointer technique, Sliding Window |
-| **Recursion** | ⏳ Pending | Backtracking, Memoization |
-| **Collections** | ⏳ Pending | Internal working of HashMap & ArrayList |
+| **Core Java** | ✅ Completed | JVM, OOP, Access Control |
+| **OOP LevelUp** | 🔄 In Progress | Polymorphism, Abstraction, Design Structure |
+| **Exception Handling** | 🔄 In Progress | Custom Exceptions, Flow Control |
+| **Collections** | 🔄 In Progress | Internal Working & Performance |
+| **Recursion & Backtracking** | ⏳ Planned | Advanced Problem Solving |
+
 
 ---
 
@@ -34,6 +40,16 @@ I follow a strict professional directory structure to ensure code maintainabilit
 * **Build Tool:** Maven / Gradle
 * **IDE:** IntelliJ IDEA / VS Code
 * **Version Control:** Git & GitHub
+
+---
+
+## 🧠 Coding Principles
+
+- Clean folder-based architecture
+- One class per file (in LevelUp structure)
+- Time & Space complexity documented
+- Concept-linked learning (not random examples)
+- Progressive refactoring from beginner → professional patterns
 
 ---
 
