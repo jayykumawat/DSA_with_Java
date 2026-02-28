@@ -1,4 +1,4 @@
-package oop_concepts;
+package oop_concepts.encapsulation;
 
 /*
 Problem:
