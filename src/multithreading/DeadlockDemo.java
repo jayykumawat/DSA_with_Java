@@ -41,6 +41,22 @@ public class DeadlockDemo {
                     System.out.println("Thread 2 locked Resource A");
                 }
             }
+        //The simplest way to avoid deadlock is Lock Ordering    
+
+        //     Thread t1=new Thread(()->{
+        //     synchronized(resA) {
+        //         synchronized (resB) {
+        //             System.out.println("Thread 1 complete safely");
+        //         }
+        //     }
+        // });
+
+        // Thread t2=new Thread(()->{
+        //     synchronized(resA){
+        //         synchronized(resB){
+        //             System.out.println("Thread 2 complete safely");
+        //         }
+        //     }
         });
 
         t1.start();
