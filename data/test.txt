@@ -1,2 +1,2 @@
-Hello Java File Handling
-This is my first file read program
+Hello from Java FileWriter
+This line is written by the program.
