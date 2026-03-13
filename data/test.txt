@@ -1,2 +1,13 @@
-Hello from Java FileWriter
-This line is written by the program.
+ID: 101
+Name: Jay
+Course: BCA
+Year: 2026
+Skills: Java, DSA, Multithreading.
+----------------------------------
+Learning File Handling in Java!
+- Character Streams (FileReader)
+- Byte Streams (FileInputStream)
+- Buffered Streams (BufferedReader)New entry: Learning Synchronization.
+Buffered Writing is very fast..
+New entry: Learning Synchronization.
+Buffered Writing is very fast..
