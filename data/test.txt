@@ -7,7 +7,6 @@ Skills: Java, DSA, Multithreading.
 Learning File Handling in Java!
 - Character Streams (FileReader)
 - Byte Streams (FileInputStream)
-- Buffered Streams (BufferedReader)New entry: Learning Synchronization.
-Buffered Writing is very fast..
+- Buffered Streams (BufferedReader)
 New entry: Learning Synchronization.
-Buffered Writing is very fast..
+Buffered Writing is very fast..Hello from FileOutputStream
