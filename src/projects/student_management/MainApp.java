@@ -1,5 +1,7 @@
 package projects.student_management;
 
+import java.lang.classfile.ClassFile.Option;
+import java.util.Optional;
 import java.util.Scanner;
 
 /*
@@ -41,7 +43,6 @@ public class MainApp {
                     int age = sc.nextInt();
 
                     service.addStudent(new Student(id, name, age));
-                    System.out.println("Student Added!");
                     break;
 
                 case 2:
@@ -52,7 +53,7 @@ public class MainApp {
                     System.out.print("Enter ID: ");
                     int searchId = sc.nextInt();
 
-                    Student found = service.findStudentById(searchId);
+                    Optional<Student> found = service.findStudentById(searchId);
 
                     if (found != null)
                         System.out.println(found);

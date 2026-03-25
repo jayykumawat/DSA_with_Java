@@ -1,6 +1,9 @@
 package projects.student_management;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /*
 PROBLEM:
@@ -25,11 +28,18 @@ O(n)
 
 public class StudentService {
 
-    private ArrayList<Student> students = new ArrayList<>();
+    private List<Student> students = new ArrayList<>();
 
     // ADD
     public void addStudent(Student s) {
-        students.add(s);
+        boolean exits = students.stream().anyMatch(st->st.getId()==s.getId());
+        if(exits){
+            System.out.println("Error Student with Id:- "+s.getId()+" already exits !");
+        }
+        else{
+            students.add(s);
+            System.out.println("Student Add Successfully");
+        }
     }
 
     // VIEW
@@ -39,37 +49,25 @@ public class StudentService {
             return;
         }
 
-        for (Student s : students) {
-            System.out.println(s);
-        }
+        students.forEach(System.out::println);
     }
 
     // SEARCH
-    public Student findStudentById(int id) {
-        for (Student s : students) {
-            if (s.getId() == id) {
-                return s;
-            }
-        }
-        return null;
+    public Optional<Student> findStudentById(int id) {
+       return students.stream().filter(s->s.getId()==id).findFirst();
     }
 
     // DELETE
     public boolean deleteStudent(int id) {
-        Student s = findStudentById(id);
-
-        if (s != null) {
-            students.remove(s);
-            return true;
-        }
-        return false;
+        return students.removeIf(s->s.getId()==id);
     }
 
     // UPDATE
     public boolean updateStudent(int id, String newName, int newAge) {
-        Student s = findStudentById(id);
+        Optional<Student> studentOpt = findStudentById(id);
 
-        if (s != null) {
+        if(studentOpt.isPresent()){
+            Student s= studentOpt.get();
             s.setName(newName);
             s.setAge(newAge);
             return true;
