@@ -28,7 +28,14 @@ O(n)
 
 public class StudentService {
 
-    private List<Student> students = new ArrayList<>();
+    private List<Student>students;
+StudentService(){
+    students=FileHandler.loadStudent();
+}
+
+    private void save(){
+    FileHandler.saveStudents(new ArrayList<>(students));
+}
 
     // ADD
     public void addStudent(Student s) {
@@ -39,6 +46,7 @@ public class StudentService {
         else{
             students.add(s);
             System.out.println("Student Add Successfully");
+            save();
         }
     }
 
@@ -59,7 +67,11 @@ public class StudentService {
 
     // DELETE
     public boolean deleteStudent(int id) {
-        return students.removeIf(s->s.getId()==id);
+        boolean removed=students.removeIf(s->s.getId()==id);
+        if(removed){
+            save();
+        }
+        return removed;
     }
 
     // UPDATE
@@ -70,6 +82,7 @@ public class StudentService {
             Student s= studentOpt.get();
             s.setName(newName);
             s.setAge(newAge);
+            save();
             return true;
         }
         return false;

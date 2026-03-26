@@ -1,5 +1,5 @@
 package projects.student_management;
-
+import java.io.Serializable;
 /*
 PROBLEM:
 Represent a Student entity with basic attributes.
@@ -19,7 +19,7 @@ SPACE COMPLEXITY:
 O(1)
 */
 
-public class Student {
+public class Student implements Serializable {
 
     private int id;
     private String name;
