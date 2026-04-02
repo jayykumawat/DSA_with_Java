@@ -37,6 +37,9 @@ StudentService(){
     FileHandler.saveStudents(new ArrayList<>(students));
 }
 
+public boolean isDuplicateId(int id) {
+    return findStudentById(id) != null;
+}
     // ADD
     public void addStudent(Student s) {
         boolean exits = students.stream().anyMatch(st->st.getId()==s.getId());

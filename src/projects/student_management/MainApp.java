@@ -1,6 +1,5 @@
 package projects.student_management;
 
-import java.lang.classfile.ClassFile.Option;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -27,68 +26,120 @@ public class MainApp {
             System.out.println("6. Exit");
 
             System.out.print("Enter choice: ");
-            int choice = sc.nextInt();
+            int choice ;
+            try {
+                choice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid Input Enter a Number !");
+                sc.nextLine();
+                continue;
+            }
 
             switch (choice) {
 
-                case 1:
-                    System.out.print("Enter ID: ");
-                    int id = sc.nextInt();
-                    sc.nextLine();
+            case 1:
+    try {
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
 
-                    System.out.print("Enter Name: ");
-                    String name = sc.nextLine();
+        if (id <= 0) {
+            throw new InvalidInputException("ID must be positive!");
+        }
 
-                    System.out.print("Enter Age: ");
-                    int age = sc.nextInt();
+        if (service.isDuplicateId(id)) {
+            throw new InvalidInputException("Duplicate ID not allowed!");
+        }
 
-                    service.addStudent(new Student(id, name, age));
-                    break;
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Age: ");
+        int age = sc.nextInt();
+
+        if (age <= 0 || age > 100) {
+            throw new InvalidInputException("Invalid age!");
+        }
+
+        service.addStudent(new Student(id, name, age));
+        System.out.println("Student Added!");
+
+    } catch (InvalidInputException e) {
+        System.out.println(e.getMessage());
+    } catch (Exception e) {
+        System.out.println("Invalid input!");
+        sc.nextLine();
+    }
+    break;
 
                 case 2:
                     service.viewStudents();
                     break;
 
-                case 3:
-                    System.out.print("Enter ID: ");
-                    int searchId = sc.nextInt();
+        case 3:
+    try {
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
 
-                    Optional<Student> found = service.findStudentById(searchId);
+        Optional<Student> s = service.findStudentById(id);
 
-                    if (found != null)
-                        System.out.println(found);
-                    else
-                        System.out.println("Student not found!");
-                    break;
+        if (s != null)
+            System.out.println(s);
+        else
+            System.out.println("Not found");
 
-                case 4:
-                    System.out.print("Enter ID: ");
-                    int deleteId = sc.nextInt();
+    } catch (Exception e) {
+        System.out.println("Invalid input!");
+        sc.nextLine();
+    }
+    break;
 
-                    if (service.deleteStudent(deleteId))
-                        System.out.println("Deleted successfully!");
-                    else
-                        System.out.println("Student not found!");
-                    break;
+        case 4:
+    try {
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
 
-                case 5:
-                    System.out.print("Enter ID: ");
-                    int updateId = sc.nextInt();
-                    sc.nextLine();
+        if (service.deleteStudent(id))
+            System.out.println("Deleted!");
+        else
+            System.out.println("Not found");
 
-                    System.out.print("Enter New Name: ");
-                    String newName = sc.nextLine();
+    } catch (Exception e) {
+        System.out.println("Invalid input!");
+        sc.nextLine();
+    }
+    break;
 
-                    System.out.print("Enter New Age: ");
-                    int newAge = sc.nextInt();
+        case 5:
+    try {
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
 
-                    if (service.updateStudent(updateId, newName, newAge))
-                        System.out.println("Updated successfully!");
-                    else
-                        System.out.println("Student not found!");
-                    break;
+        System.out.print("Enter New Name: ");
+        String name = sc.nextLine();
 
-                case 6:
+        System.out.print("Enter New Age: ");
+        int age = sc.nextInt();
+
+        if (age <= 0 || age > 100) {
+            throw new InvalidInputException("Invalid age!");
+        }
+
+        if (service.updateStudent(id, name, age))
+            System.out.println("Updated!");
+        else
+            System.out.println("Not found");
+
+    } catch (InvalidInputException e) {
+        System.out.println(e.getMessage());
+    } catch (Exception e) {
+        System.out.println("Invalid input!");
+        sc.nextLine();
+    }
+    break;
+
+        case 6:
                     System.out.println("Exiting...");
                     sc.close();
                     return;
