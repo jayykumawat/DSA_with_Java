@@ -38,7 +38,7 @@ StudentService(){
 }
 
 public boolean isDuplicateId(int id) {
-    return findStudentById(id) != null;
+    return findStudentById(id).isPresent();
 }
     // ADD
     public void addStudent(Student s) {
@@ -48,20 +48,32 @@ public boolean isDuplicateId(int id) {
         }
         else{
             students.add(s);
-            System.out.println("Student Add Successfully");
+            System.out.println("✔ Student added successfully!");
             save();
+            LoggerUtil.log("Student added: ID=" + s.getId());
+
         }
     }
 
     // VIEW
     public void viewStudents() {
-        if (students.isEmpty()) {
-            System.out.println("No students found.");
-            return;
-        }
 
-        students.forEach(System.out::println);
+    if (students.isEmpty()) {
+        System.out.println("No students available.");
+        return;
     }
+
+    System.out.println("\n--- Student List ---");
+
+    for (Student s : students) {
+        System.out.println("--------------------");
+        System.out.println("ID   : " + s.getId());
+        System.out.println("Name : " + s.getName());
+        System.out.println("Age  : " + s.getAge());
+    }
+
+    System.out.println("--------------------");
+}
 
     // SEARCH
     public Optional<Student> findStudentById(int id) {
@@ -86,6 +98,8 @@ public boolean isDuplicateId(int id) {
             s.setName(newName);
             s.setAge(newAge);
             save();
+            LoggerUtil.log("Student added: ID=" + s.getId());
+
             return true;
         }
         return false;
