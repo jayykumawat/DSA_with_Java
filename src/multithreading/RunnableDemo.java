@@ -2,10 +2,11 @@ package multithreading;
 /**
  * Demonstrates creating a thread using Runnable interface.
  */
-class MyTask implements Runnable{
-    
-    @Override
-    public void run() {
+
+public class RunnableDemo {
+    public static void main(String[] args) {
+        
+        Thread t2=new Thread(()->{
         
         for(int i=0;i<=5;i++){
         System.out.println("Runnable Thread running: "+i);
@@ -15,12 +16,7 @@ class MyTask implements Runnable{
        } catch (InterruptedException e) {
         System.out.println("Thread Interrupted");
        }
- }
-}
-public class RunnableDemo {
-    public static void main(String[] args) {
-        MyTask t1= new MyTask();
-        Thread t2=new Thread(t1);
+ });
         t2.start();
 
         for (int i = 0; i <=5; i++) {
