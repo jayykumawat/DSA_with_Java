@@ -34,13 +34,7 @@ public class ComparatorDemo {
         employees.add(new Employee(1, "Jay"));
         employees.add(new Employee(2, "Aman"));
 
-        Collections.sort(employees, new Comparator<Employee>() {
-
-            @Override
-            public int compare(Employee e1, Employee e2) {
-                return e1.name.compareTo(e2.name);
-            }
-        });
+        Collections.sort(employees,(Employee e1, Employee e2)->e1.name.compareTo(e2.name));
 
         System.out.println("Sorted by Name:");
         System.out.println(employees);
