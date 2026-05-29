@@ -7,22 +7,36 @@ public class ValidPalindrome {
       int left=0;
       int right=str.length()-1;
 
-      while (left<right) {
-        if(str.charAt(left)!=str.charAt(right)){
-            return false;
+      while(left<right){
+        while(left<right && !Character.isLetterOrDigit(str.charAt(left)))
+        {
+          left++;
+        }
+         while(left<right && !Character.isLetterOrDigit(str.charAt(right)))
+        {
+          right--;
+        }
+        if(Character.toLowerCase(str.charAt(left))!=Character.toLowerCase(str.charAt(right))){
+          return false;
         }
         left++;
         right--;
       }
       return true;
+      // while (left<right) {
+      //   if(str.charAt(left)!=str.charAt(right)){
+      //       return false;
+      //   }
+      //   left++;
+      //   right--;
+      // }
+      // return true;
     }
     public static void main(String[] args) {
-         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter a String to check is it palindrome or not");
-       
-        String str=sc.nextLine().toLowerCase();
-        System.out.println("IS Palindrome: "+ispalindrome(str));
+         
+        String str= "A man, a plan, a canal: Panama";
+        System.out.println("IS "+ str +" Palindrome: "+ispalindrome(str));
 
-        sc.close();
+        
     }
 }
