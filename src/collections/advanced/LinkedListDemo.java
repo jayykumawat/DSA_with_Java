@@ -1,4 +1,6 @@
 package collections.advanced;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
@@ -17,7 +19,6 @@ public class LinkedListDemo {
         cities.add("Mumbai");
         cities.add("Delhi");
         cities.add("Bangalore");
-
         cities.addFirst("Kolkata");
         cities.addLast("Chennai");
 
@@ -33,3 +34,8 @@ public class LinkedListDemo {
     }
     
 }
+
+// LinkedList<String>animal=new LinkedList<>(Arrays.asList("cat","dog","elephant"));
+        // LinkedList<String>removeanimal =new LinkedList<>(Arrays.asList("dog","lion"));
+        // animal.removeAll(removeanimal);
+        // System.out.println(animal);
