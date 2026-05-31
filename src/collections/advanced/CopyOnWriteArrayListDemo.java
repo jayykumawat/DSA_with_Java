@@ -39,13 +39,6 @@ Thread writeThread = new Thread(()->{
 readThread.start();
 writeThread.start();
 
-
-
-
-
-
-
-
         // List<String> list= new CopyOnWriteArrayList<>();
 
         // list.add("pizza");
