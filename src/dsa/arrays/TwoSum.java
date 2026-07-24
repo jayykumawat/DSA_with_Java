@@ -9,6 +9,17 @@ Use HashMap to store (value → index)
 
 TIME: O(n)
 SPACE: O(n)
+
+PROBLEM:
+Given a sorted array and a target, return the 1-based indices
+of two numbers whose sum equals the target.
+
+APPROACH:
+Use Two Pointers.
+
+TIME: O(n)
+SPACE: O(1)
+
 */
 import java.util.Arrays;
 
@@ -33,6 +44,8 @@ public class TwoSum {
        }
         return new int[]{-1,-1};
     }
+   
+    // Works only because the array is sorted
     static void main(String[] args) {
         int[]arr={2,7,11,15};
         int target=9;

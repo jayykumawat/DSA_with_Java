@@ -7,7 +7,12 @@ PROBLEM:
 Move all zeroes to end while maintaining order.
 
 APPROACH:
-Use two pointers.
+Use a write pointer (array compaction).
+
+1. Traverse the array.
+2. Copy every non-zero element to the next available position.
+3. Fill the remaining positions with zeros.
+
 
 TIME: O(n)
 SPACE: O(1)
@@ -24,6 +29,7 @@ public class MoveZeroes {
             if (num != 0) {
                 arr[index] = num;
                 index++;
+                
             }
         }
 
